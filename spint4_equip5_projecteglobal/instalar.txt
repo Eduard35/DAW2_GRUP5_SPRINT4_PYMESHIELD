@@ -1,6 +1,6 @@
 git clone https://github.com/Eduard35/DAW2_GRUP5_SPRINT4_PymeShield.git
 cd DAW2_GRUP5_SPRINT4_PymeShield/spint4_equip5_projecteglobal
-sudo apt-get install php-xml php-curl
+sudo apt-get install php-xml php-curl composer
 mkdir vendor
 sudo chmod -R 777 vendor
 composer install
