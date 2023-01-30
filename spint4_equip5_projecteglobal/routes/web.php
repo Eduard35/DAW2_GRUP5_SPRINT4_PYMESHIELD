@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProvaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/andrei', function () {
-    return view('andrei');
-});
-
+Route::get('/andrei', HomeController::class);
