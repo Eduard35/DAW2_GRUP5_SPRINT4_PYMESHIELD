@@ -48,7 +48,7 @@ class MyApp(MDApp):
         scroll = ScrollView()
         
         # Leer los datos del archivo "inventory.json"
-        with open("json/inventory.json", "r") as f:
+        with open("KivyMD-base/json/inventory.json", "r") as f:
             inventory = json.load(f)
 
         # Crear el layout principal

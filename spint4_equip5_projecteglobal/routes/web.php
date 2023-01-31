@@ -19,5 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/andrei', HomeController::class);
+Route::get('/index', HomeController::class);
 
