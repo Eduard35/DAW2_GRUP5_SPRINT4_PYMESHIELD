@@ -1,4 +1,4 @@
 <!doctype html>
-@extends('layouts.user')
+@extends('layouts.header')
 <html>
 

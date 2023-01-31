@@ -20,4 +20,3 @@ Route::get('/', function () {
 });
 
 Route::get('/index', HomeController::class);
-
