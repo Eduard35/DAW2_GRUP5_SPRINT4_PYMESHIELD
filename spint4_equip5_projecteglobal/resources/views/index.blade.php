@@ -1,4 +1,9 @@
 <!doctype html>
-@extends('layouts.header')
-<html>
 
+@extends('layouts.header')
+
+@section('content')
+
+@stop
+
+<html>
