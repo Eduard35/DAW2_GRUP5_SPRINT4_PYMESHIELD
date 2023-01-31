@@ -1,4 +1,5 @@
 <!doctype html>
+@extends('layouts.user')
 <html>
 
 <head>
@@ -8,7 +9,7 @@
 </head>
 
 <body>
-    <h1>Andrei</h1>
+    <h1 class="text-center hover:bg-sky-700">Andrei</h1>
     <table class="table-fixed">
         <thead>
             <tr>
