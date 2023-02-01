@@ -11,6 +11,20 @@
           <BellIcon class="h-8 w-8" aria-hidden="true" />
         </button>
 
+         <!-- Dropdown -->
+      <div v-if="showDropdown" class="relative">
+        <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <a
+            v-for="item in dropdown"
+            :key="item.name"
+            :href="item.href"
+            class="block px-4 py-2 text-sm text-gray-700"
+          >
+            {{ item.name }}
+          </a>
+        </div>
+      </div>
+
         <!-- Profile dropdown -->
         <Menu as="div" class="relative ml-3">
           <div>
@@ -112,12 +126,18 @@ const user = {
     '/img/default_profile.png',
 }
 const navigation = [
-  { name: 'Inicio', href: '#', current: true, icon: HomeIcon },
+  { name: 'Inicio', href: '#', current: false, icon: HomeIcon },
   { name: 'Encuestas', href: '#', current: false, icon: QuestionMarkCircleIcon },
   { name: 'Formación', href: '#', current: false, icon: AcademicCapIcon },
   { name: 'Presupuestos', href: '#', current: false, icon: CurrencyEuroIcon },
   { name: 'Calendario', href: '#', current: false, icon: CalendarDaysIcon },
-  { name: 'Inventario', href: '#', current: false, icon: QrCodeIcon },
+  { name: 'Inventario', href: '/Inventari' , current: true, icon: QrCodeIcon },
+]
+//@mouseover="showDropdown = true" @mouseleave="showDropdown = false"
+//Opcions d'admin
+const dropdown = [
+        { name: "Dispositivos", href: "#" },
+        { name: "Restaurar Dispositivos", href: "#" }
 ]
 const userNavigation = [
   { name: 'Mi Perfil', href: '#' },
