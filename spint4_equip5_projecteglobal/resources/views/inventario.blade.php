@@ -4,13 +4,19 @@
 
 @section('content')
 
-<div class="taulaPrincipal">
+
 <table class="table-auto">
     <thead>
       <tr>
-        <th>Song</th>
-        <th>Artist</th>
-        <th>Year</th>
+        <th>Marca</th>
+        <th>Model</th>
+        <th>MAC</th>
+        <th>Wifi</th>
+        <th>Tipo</th>
+        <th>Descripción</th>
+        <th>Estado</th>
+        <th>Num Série</th>
+        <th><button>Crear</button></th>
       </tr>
     </thead>
     <tbody>
