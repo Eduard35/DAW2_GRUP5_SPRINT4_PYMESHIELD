@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MainCotroller;
 use App\Http\Controllers\ProvaController;
 
 /*
@@ -20,3 +21,4 @@ Route::get('/', function () {
 });
 
 Route::get('/index', HomeController::class);
+Route::get('/mostrarDispositivo', MainCotroller::class);
