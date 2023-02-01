@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProvaController;
-
+use App\Http\Controllers\MainController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/index', HomeController::class);
+Route::get('/mostrarLista', [MainController::class, 'mostrarLista']);
+Route::get('/mostrarDispositivo', [MainController::class, 'mostrarDispositivos']);
+Route::get('/Inventario', [MainController::class, 'Inventario']);
+
+

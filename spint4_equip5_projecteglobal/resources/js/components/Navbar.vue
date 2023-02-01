@@ -131,13 +131,7 @@ const navigation = [
   { name: 'Formación', href: '#', current: false, icon: AcademicCapIcon },
   { name: 'Presupuestos', href: '#', current: false, icon: CurrencyEuroIcon },
   { name: 'Calendario', href: '#', current: false, icon: CalendarDaysIcon },
-  { name: 'Inventario', href: '/Inventari' , current: true, icon: QrCodeIcon },
-]
-//@mouseover="showDropdown = true" @mouseleave="showDropdown = false"
-//Opcions d'admin
-const dropdown = [
-        { name: "Dispositivos", href: "#" },
-        { name: "Restaurar Dispositivos", href: "#" }
+  { name: 'Inventario', href: '#', current: false, icon: QrCodeIcon },
 ]
 const userNavigation = [
   { name: 'Mi Perfil', href: '#' },
