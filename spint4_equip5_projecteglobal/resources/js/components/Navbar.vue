@@ -112,12 +112,12 @@ const user = {
     '/img/default_profile.png',
 }
 const navigation = [
-  { name: 'Inicio', href: '#', current: true, icon: HomeIcon },
+  { name: 'Inicio', href: '#', current: false, icon: HomeIcon },
   { name: 'Encuestas', href: '#', current: false, icon: QuestionMarkCircleIcon },
   { name: 'Formación', href: '#', current: false, icon: AcademicCapIcon },
   { name: 'Presupuestos', href: '#', current: false, icon: CurrencyEuroIcon },
   { name: 'Calendario', href: '#', current: false, icon: CalendarDaysIcon },
-  { name: 'Inventario', href: '#', current: false, icon: QrCodeIcon },
+  { name: 'Inventario', href: '#', current: true, icon: QrCodeIcon },
 ]
 const userNavigation = [
   { name: 'Mi Perfil', href: '#' },
