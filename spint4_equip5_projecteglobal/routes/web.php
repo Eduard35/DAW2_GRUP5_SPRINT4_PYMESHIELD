@@ -19,8 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/index', HomeController::class);
-Route::get('', [MainController::class, 'mostrarLista']);
+Route::get('/mostrarLista', [MainController::class, 'mostrarLista']);
 Route::get('/mostrarDispositivo', [MainController::class, 'mostrarDispositivos']);
-Route::get('', [MainController::class, 'Inventario']);
+Route::get('/Inventario', [MainController::class, 'Inventario']);
 
 

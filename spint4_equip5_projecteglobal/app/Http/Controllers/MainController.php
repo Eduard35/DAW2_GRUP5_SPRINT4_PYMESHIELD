@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
     public function Inventario(){
-        return view("");
+        return view("inventario");
     }
 
     public function mostrarDispositivos(){
@@ -15,6 +15,6 @@ class MainController extends Controller
     }
 
     public function mostrarLista(){
-
+        return view("mostrarLista");
     }
 }
