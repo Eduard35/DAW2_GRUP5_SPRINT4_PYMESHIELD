@@ -10,7 +10,7 @@
       <tr>
         <th>Song</th>
         <th>Artist</th>
-        <th>Year</th>h
+        <th>Year</th>
       </tr>
     </thead>
     <tbody>
