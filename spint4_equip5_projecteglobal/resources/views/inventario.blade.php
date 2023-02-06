@@ -4,6 +4,7 @@
 
 @section('content')
 
+<h1 class="bg-slate">uhuytrws</h1>
 
 <table class="table-auto">
     <thead>
