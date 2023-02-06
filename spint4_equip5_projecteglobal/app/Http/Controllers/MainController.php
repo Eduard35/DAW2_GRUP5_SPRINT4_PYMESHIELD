@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    public function Inventario(){
+    public function inventario(){
         return view("inventario");
     }
 
