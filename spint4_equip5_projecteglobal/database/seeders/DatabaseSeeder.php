@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CourseSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(DeviceSeeder::class);
+        $this->call(ImageDeviceSeeder::class);
         $this->call(EmblemSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(ResourceFileSeeder::class);
@@ -35,8 +36,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ActivitySeeder::class);
         $this->call(DeliverySeeder::class);
         $this->call(GradeSeeder::class);
-        //$this->call(RatingSeeder::class);
-        //$this->call(CourseUserSeeder::class);
+        $this->call(RatingSeeder::class);
+        $this->call(CourseUserSeeder::class);
         $this->call(QuestionnaireUserSeeder::class);
         $this->call(QuestionSeeder::class);
         $this->call(QuestionQuestionnaireSeeder::class);

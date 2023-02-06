@@ -18,8 +18,8 @@ class GradeFactory extends Factory
     {
         $user_id = User::all()->pluck('id')->toArray();
         return [
-            'qualification'=>$this->faker->numberBetween($min = 0, $max = 10),
-            'user_id'=>$this->faker->randomElement($user_id), 
+            'qualification'=>$this->faker->numberBetween(0,100),
+            'user_id'=>$this->faker->randomElement($user_id),
             'description'=>$this->faker-> text(50),
             'hidden'=> $this->faker->date(),
         ];

@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('course_user', function (Blueprint $table) {
+        Schema::create('user_courses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('course_id')->references('id')->on('courses');
             $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('course_id')->references('id')->on('courses');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('course_user');
+        Schema::dropIfExists('user_courses');
     }
 };
