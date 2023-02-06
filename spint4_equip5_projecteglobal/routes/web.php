@@ -24,5 +24,7 @@ Route::get('/restaurar', [MainController::class, 'restaurar']);
 Route::get('/mostrarDispositivo', [MainController::class, 'mostrarDispositivos']);
 Route::get('/hiddenDevices', [MainController::class, 'hiddenDevices']);
 Route::get('/inventario', [MainController::class, 'inventario']);
+Route::get('/sendImage', [MainController::class, 'sendImage']);
+Route::post('/deviceImage', [MainController::class, 'deviceImage'])->name('image.store');
 
 

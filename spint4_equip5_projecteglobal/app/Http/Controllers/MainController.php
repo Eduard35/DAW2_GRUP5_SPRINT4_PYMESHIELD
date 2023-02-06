@@ -23,4 +23,19 @@ class MainController extends Controller
         $hidden_devices = Device::all()->where('hidden', 'is not', null);
         return $hidden_devices;
     }
+
+    public function sendImage() {
+        return view('send_image');
+    }
+
+    public function deviceImage(Request $request) {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+        ]);
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('images'), $imageName);
+        return back()
+            ->with('success','You have successfully upload image.')
+            ->with('image',$imageName); 
+    }
 }
