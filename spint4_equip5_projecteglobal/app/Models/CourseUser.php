@@ -5,23 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Emblem extends Model
+class CourseUser extends Model
 {
     use HasFactory;
+
     // Nom de la taula
-    protected $table = 'emblems';
+    protected $table = 'user_courses';
 
     // Camps de la taula a replenar (El id i el timespace no es fiquen)
     protected $fillable = [
-    'name',
-    'description',
-    'image',
+    'user_id',
     'course_id',
-    'hidden'
     ];
-    
-    public function courses()
-    {
-        return $this->belongsTo(Course::class);
-    }
 }

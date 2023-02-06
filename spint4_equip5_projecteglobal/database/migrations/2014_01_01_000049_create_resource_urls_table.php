@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name', 255)->nullable(false);
             $table->string('location', 255)->nullable(false);
             $table->foreignId('category_id')->references('id')->on('categories');
-            $table->date('hidden')->nullable();
+            $table->date('hidden')->nullable()->default(null);
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resource_urls');
+        Schema::dropIfExists('resource_files');
     }
 };
