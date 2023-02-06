@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::get('/index', HomeController::class);
 Route::get('/mostrarLista', [MainController::class, 'mostrarLista']);
 Route::get('/mostrarDispositivo', [MainController::class, 'mostrarDispositivos']);
-Route::get('/Inventario', [MainController::class, 'Inventario']);
 Route::get('/hiddenDevices', [MainController::class, 'hiddenDevices']);
+Route::get('/inventario', [MainController::class, 'inventario']);
 
 
