@@ -4,37 +4,61 @@
 
 @section('content')
 
+<h1 class="text-center p-8 mt-2 text-3xl">Inventario</h1>
+<div style="display:flex; justify-content:center">
+<table class="container table-auto w-full rounded-lg border-2 border-orange-500 bg-white mt-5 w-99">
+    <thead class="bg-orange-500 text-white">
 <h1 class="bg-slate">uhuytrws</h1>
 
 <table class="table-auto">
     <thead>
       <tr>
+        <th></th>
         <th>Marca</th>
         <th>Model</th>
         <th>MAC</th>
         <th>Wifi</th>
         <th>Tipo</th>
-        <th>Descripción</th>
+        <th>Descripcion</th>
         <th>Estado</th>
-        <th>Num Série</th>
-        <th><button>Crear</button></th>
+        <th>Núm Serie</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-        <td>Malcolm Lockyer</td>
-        <td>1961</td>
+      <tr class="bg-orange">
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>
-      <tr>
-        <td>Witchy Woman</td>
-        <td>The Eagles</td>
-        <td>1972</td>
+      <tr class="bg-orange">
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>
-      <tr>
-        <td>Shining Star</td>
-        <td>Earth, Wind, and Fire</td>
-        <td>1975</td>
+      <tr class="bg-orange">
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="bg-orange">
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="bg-orange">
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="bg-orange">
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="bg-orange">
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
