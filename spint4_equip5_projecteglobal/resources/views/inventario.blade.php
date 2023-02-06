@@ -4,9 +4,9 @@
 
 @section('content')
 
-<h1 class="text-center p-8 mt-2 text-3xl">Inventario dispositivos</h1>
+<h1 class="text-center p-2 mt-2 text-3xl">Inventario dispositivos</h1>
 
-<div class="flex justify-center rounded-lg">
+<div class="flex justify-center -m-1.5">
 <table class="container shadow-xl table-auto w-full rounded-lg border-2 border-orange-500 bg-white mt-5 w-99 text-center">
     <thead class="bg-orange-500 text-white">
       <tr>
