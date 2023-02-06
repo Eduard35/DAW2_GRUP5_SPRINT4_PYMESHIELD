@@ -7,3 +7,4 @@ mv $folder/migrations/* database/migrations
 mv $folder/seeders/* database/seeders 
 mv $folder/Models/* app/Models 
 rm -rf pymedb
+rm pymedb.zip
