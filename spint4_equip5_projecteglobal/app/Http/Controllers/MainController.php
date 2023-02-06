@@ -17,4 +17,8 @@ class MainController extends Controller
     public function mostrarLista(){
         return view("mostrarLista");
     }
+
+    public function hiddenDevices() {
+        
+    }
 }
