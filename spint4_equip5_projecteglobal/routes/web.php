@@ -14,10 +14,11 @@ use App\Http\Controllers\MainController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+Route::get('/', HomeController::class, '__invoke');
 Route::get('/index', HomeController::class);
 Route::get('/mostrarLista', [MainController::class, 'mostrarLista']);
 Route::get('/mostrarDispositivo', [MainController::class, 'mostrarDispositivos']);
