@@ -8,6 +8,10 @@
 <div style="display:flex; justify-content:center">
 <table class="container table-auto w-full rounded-lg border-2 border-orange-500 bg-white mt-5 w-99 text-center">
     <thead class="bg-orange-500 text-white">
+<h1 class="bg-slate">uhuytrws</h1>
+
+<table class="table-auto">
+    <thead>
       <tr>
         <th>Marca</th>
         <th>Model</th>
