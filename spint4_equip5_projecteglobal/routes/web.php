@@ -22,6 +22,7 @@ Route::get('/', HomeController::class, '__invoke');
 Route::get('/index', HomeController::class);
 Route::get('/mostrarLista', [MainController::class, 'mostrarLista']);
 Route::get('/mostrarDispositivo', [MainController::class, 'mostrarDispositivos']);
+Route::get('/hiddenDevices', [MainController::class, 'hiddenDevices']);
 Route::get('/inventario', [MainController::class, 'inventario']);
 
 
