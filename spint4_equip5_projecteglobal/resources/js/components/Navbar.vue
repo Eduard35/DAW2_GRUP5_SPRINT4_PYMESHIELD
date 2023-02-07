@@ -99,7 +99,11 @@
       </DisclosurePanel>
     </Disclosure>
   </div>
+
+  
 </template>
+
+
 
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
@@ -119,7 +123,7 @@ const navigation = [
   { name: 'Formación', href: '#', current: false, icon: AcademicCapIcon },
   { name: 'Presupuestos', href: '#', current: false, icon: CurrencyEuroIcon },
   { name: 'Calendario', href: '#', current: false, icon: CalendarDaysIcon },
-  { name: 'Inventario', href: '/admin' , current: false, icon: QrCodeIcon },
+  { name: 'Inventario', href: '/inventario' , current: false, icon: QrCodeIcon },
 ]
 //@mouseover="showDropdown = true" @mouseleave="showDropdown = false"
 //Opcions d'admin
