@@ -1,9 +1,10 @@
-<!doctype html>
-
 @extends('layouts.header')
 
+@section('title', 'Restaurar')
+
 @section('content')
+<div id="app">
+    <restaurar/>
+</div>
 
-@stop
-
-<html>
+@endsection
