@@ -23,4 +23,16 @@ class MainController extends Controller
         $hidden_devices = Device::all()->where('hidden', 'is not', null);
         return $hidden_devices;
     }
+
+    public function crearDispoditivo(){
+        
+    }
+
+    public function modificarDispositivo(){
+        
+    }
+
+    public function eliminarDispositivo(){
+
+    }
 }
