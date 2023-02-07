@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DevicesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainController;
@@ -28,7 +29,10 @@ Route::get('/restaurar', [RestoreController::class, 'listar']);
 Route::patch('/restaurar', [RestoreController::class, 'restaurar']);
 
 //Mostrar Dispositivos
-Route::get('/mostrarDispositivo', [MainController::class, 'mostrarDispositivos']);
+Route::get('/mostrarDispositivo', [DevicesController::class, 'mostrarDispositivos']);
+Route::post('/mostrarDispositivo', [DevicesController::class, 'crear']);
+Route::put('/mostrarDispositivo', [DevicesController::class, 'modificar']);
+Route::patch('/mostrarDispositivo', [DevicesController::class, 'eliminar']);
 
 //Mostrar inventari
 Route::get('/inventario', [MainController::class, 'inventario']);

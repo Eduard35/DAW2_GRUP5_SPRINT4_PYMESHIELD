@@ -11,10 +11,6 @@ class MainController extends Controller
         return view("inventario");
     }
 
-    public function mostrarDispositivos(){
-        return view("mostrarDispositivos");
-    }
-
     public function sendImage() {
         return view('send_image');
     }
@@ -28,17 +24,5 @@ class MainController extends Controller
         return back()
             ->with('success','You have successfully upload image.')
             ->with('image',$imageName);
-    }
-
-    public function crearDispoditivo(){
-        
-    }
-
-    public function modificarDispositivo(){
-        
-    }
-
-    public function eliminarDispositivo(){
-
     }
 }
