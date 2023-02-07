@@ -39,6 +39,9 @@ class MyLayout(MDScreen):
     def calc(self, instance):
         print(self.ids['qrlabel'].text)
 
+
+
+
 class MyApp(MDApp):
     def build(self):
         self.title = "PymeShield"
