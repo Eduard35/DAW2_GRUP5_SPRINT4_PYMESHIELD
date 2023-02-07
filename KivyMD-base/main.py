@@ -35,8 +35,9 @@ class DrawerList(ThemableBehavior, MDList):
         instance_item.text_color = self.theme_cls.primary_color
         
 
-        
-
+class MyLayout(MDScreen):
+    def calc(self, instance):
+        print(self.ids['qrlabel'].text)
 
 class MyApp(MDApp):
     def build(self):
