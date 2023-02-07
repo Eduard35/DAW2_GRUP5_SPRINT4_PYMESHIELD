@@ -15,15 +15,6 @@ class MainController extends Controller
         return view("mostrarDispositivos");
     }
 
-    public function restaurar(){
-        return view("restaurar");
-    }
-
-    public function hiddenDevices() {
-        $hidden_devices = Device::all()->where('hidden', 'is not', null);
-        return $hidden_devices;
-    }
-
     public function sendImage() {
         return view('send_image');
     }
@@ -36,6 +27,6 @@ class MainController extends Controller
         $request->image->move(public_path('images'), $imageName);
         return back()
             ->with('success','You have successfully upload image.')
-            ->with('image',$imageName); 
+            ->with('image',$imageName);
     }
 }
