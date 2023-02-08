@@ -23,7 +23,7 @@
     <tbody class="">
     @foreach ($dispositivosInventario as $inventario)
 
-      <tr class="bg-orange-100 border-b hover:bg-orange-300" v-for="(item, index) in paginatedData" :key="index">
+      <tr class="bg-orange-100 border-b hover:bg-orange-300">
         <td>{{$inventario->brand}}</td>
         <td>{{$inventario->model}}</td>
         <td>{{$inventario->mac_ethernet}}</td>
@@ -36,41 +36,34 @@
     @endforeach
     </tbody>
   </table>
-  <nav>
-      <ul class="pagination">
-        <li v-for="index in totalPages">
-          <a href="#" @click.prevent="changePage(index)">{{ index }}</a>
-        </li>
-      </ul>
-    </nav>
+  <navigation-pagination :paginatedData="dispositivosInventario"></navigation-pagination>
 </div>
 
 <script>
+import NavigationPagination from './NavigationPagination.vue'
+
 export default {
+  components: {
+    NavigationPagination
+  },
   data() {
     return {
-      devices: [], // Aquí debes asignar los dispositivos del inventario
-      itemsPerPage: 10, // Número de elementos por página
-      currentPage: 1, // Página actual
-    };
-  },
-  computed: {
-    totalPages() {
-      return Math.ceil(this.devices.length / this.itemsPerPage);
-    },
-    paginatedData() {
-      let start = (this.currentPage - 1) * this.itemsPerPage;
-      return this.devices.slice(start, start + this.itemsPerPage);
-    },
+      paginatedData: [],
+      currentPage: 1
+    }
   },
   methods: {
-    changePage(index) {
-      this.currentPage = index;
-    },
+    changePage(page) {
+      this.currentPage = page
+    }
   },
-};
+  computed: {
+    paginatedData() {
+      return this.dispositivosInventario.slice((this.currentPage - 1) * 10, this.currentPage * 10)
+    }
+  }
+}
 </script>
-
 @stop
 
 <html>
