@@ -6,20 +6,7 @@
 
     <h1 class="text-center p-2 mt-2 text-3xl">Restaurar</h1>
 
-    <ul>
-        @foreach ($listar as $dispositivo)
-            <li>{{ $dispositivo->brand }}</li>
-            <li>{{ $dispositivo->model }}</li>
-            <li>{{ $dispositivo->mac_ethernet }}</li>
-            <li>{{ $dispositivo->mac_wifi }}</li>
-            <li>{{ $dispositivo->type_device_id }}</li>
-            <li>{{ $dispositivo->description }}</li>
-            <li>{{ $dispositivo->state }}</li>
-            <li>{{ $dispositivo->tag }}</li>
-            <li>{{ $dispositivo->serial_number }}</li>
-            <li>{{ $dispositivo->user_id }}</li>
-        @endforeach
-    </ul>
+
 
 
     <div class="flex justify-center -m-1.5">
@@ -30,24 +17,34 @@
                     <th>Marca</th>
                     <th>Model</th>
                     <th>MAC</th>
-                    <th>Wifi</th>
+                    <th>MAC_Wifi</th>
                     <th>Tipo</th>
                     <th>Descripcion</th>
                     <th>Estado</th>
+                    <th>Etiqueta</th>
                     <th>Núm Serie</th>
+                    <th>Usuario</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="bg-orange-100 border-b hover:bg-orange-300">
-                    <td>34654</td>
-                    <td>Portatil Razer Blade 15</td>
-                    <td>A01B01CD00E</td>
-                    <td>34654</td>
-                    <td>34654</td>
-                    <td>34654</td>
-                    <td>34654</td>
-                    <td>34654</td>
-                </tr>
+                @foreach ($listar as $dispositivo)
+                    <tr class="bg-orange-100 border-b hover:bg-orange-300">
+                        <td>{{ $dispositivo->brand }}</td>
+                        <td>{{ $dispositivo->model }}</td>
+                        <td>{{ $dispositivo->mac_ethernet }}</td>
+                        <td>{{ $dispositivo->mac_wifi }}</td>
+                        <td>{{ $dispositivo->type_device_id }}</td>
+                        <td>{{ $dispositivo->description }}</td>
+                        <td>{{ $dispositivo->state }}</td>
+                        <td>{{ $dispositivo->tag }}</td>
+                        <td>{{ $dispositivo->serial_number }}</td>
+                        <td>{{ $dispositivo->user_id }}</td>
+                        <td><button class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                            Restaurar
+                          </button>
+                    </tr>
+                    @endforeach
             </tbody>
         </table>
     </div>
