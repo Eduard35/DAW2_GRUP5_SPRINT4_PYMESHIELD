@@ -10,7 +10,7 @@ class InventoryController extends Controller
 {
     public function inventario(){
         $dispositivosInventario = Device :: all();
-        // $dispositivosInventario = Device::whereIn('type_device_id', $dispositivosInventario->pluck('type_device_id'))->paginate(10);
+        $dispositivosInventario = Device::whereIn('type_device_id', $dispositivosInventario->pluck('type_device_id'))->paginate(10);
         return view("inventario", compact('dispositivosInventario'));
     }
 }
