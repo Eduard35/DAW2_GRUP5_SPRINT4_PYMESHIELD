@@ -42,33 +42,6 @@
 {{$dispositivosInventario->links()}}
 </div>
 
-<navigation-pagination :paginatedData="dispositivosInventario"></navigation-pagination>
-
-<script>
-import NavigationPagination from './NavigationPagination.vue'
-
-export default {
-  components: {
-    NavigationPagination
-  },
-  data() {
-    return {
-      paginatedData: [],
-      currentPage: 1
-    }
-  },
-  methods: {
-    changePage(page) {
-      this.currentPage = page
-    }
-  },
-  computed: {
-    paginatedData() {
-      return this.dispositivosInventario.slice((this.currentPage - 1) * 10, this.currentPage * 10)
-    }
-  }
-}
-</script>
 @stop
 
 <html>
