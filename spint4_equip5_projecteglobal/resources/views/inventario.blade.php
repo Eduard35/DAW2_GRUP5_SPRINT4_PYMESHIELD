@@ -18,7 +18,7 @@
         <th>Descripcion</th>
         <th>Estado</th>
         <th>Núm Serie</th>
-      </tr>
+        Model</tr>
     </thead>
     <tbody class="">
     @foreach ($dispositivosInventario as $inventario)
@@ -36,7 +36,6 @@
     @endforeach
     </tbody>
   </table>
-  <pagination :data="dispositivosInventario" :per-page="10"></pagination>
 </div>
 
 @stop
