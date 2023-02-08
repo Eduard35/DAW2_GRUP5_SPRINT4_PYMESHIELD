@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <h1 class="text-center p-2 mt-2 text-3xl">Restaurar</h1>
+    {{-- <h1 class="text-center p-2 mt-2 text-3xl">Restaurar</h1>
 
 
     <div class="flex justify-center -m-1.5">
@@ -45,9 +45,9 @@
                     @endforeach
             </tbody>
         </table>
-    </div>
-    {{-- <div id="app">
-    <restaurar/> --}}
+    </div> --}}
+    <div>
+        <router-view /> 
     </div>
 
 @endsection
