@@ -40,7 +40,8 @@ Route::patch('/dispositivo', [DevicesController::class, 'eliminar']);
 Route::get('/inventario', [InventoryController::class, 'inventario']);
 
 // Imatges
-Route::get('/imagenes/{id}', [ImageDeviceController::class, 'mostrar'])->name('image.mostrar');
+Route::get('/imagenes', [ImageDeviceController::class, 'index'])->name('image.index');
 Route::post('/imagenes', [ImageDeviceController::class, 'guardar'])->name('image.guardar');
+Route::get('/imagenes/{id}', [ImageDeviceController::class, 'mostrar'])->name('image.mostrar');
 
 
