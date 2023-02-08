@@ -7,8 +7,6 @@
     <h1 class="text-center p-2 mt-2 text-3xl">Restaurar</h1>
 
 
-
-
     <div class="flex justify-center -m-1.5">
         <table
             class="container shadow-xl table-auto w-full rounded-lg border-2 border-orange-500 bg-white mt-5 w-99 text-center">
