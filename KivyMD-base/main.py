@@ -12,6 +12,7 @@ from kivy.properties import ObjectProperty
 from kivymd.uix.scrollview import MDScrollView
 from kivy.clock import Clock
 from kivymd.uix.list import ThreeLineIconListItem
+from kivy_garden.zbarcam import ZBarCam
 
 import json
 from kivy.uix.boxlayout import BoxLayout
@@ -34,7 +35,11 @@ class DrawerList(ThemableBehavior, MDList):
         instance_item.text_color = self.theme_cls.primary_color
         
 
-        
+class MyLayout(MDScreen):
+    def calc(self, instance):
+        print(self.ids['qrlabel'].text)
+
+
 
 
 class MyApp(MDApp):
@@ -93,25 +98,13 @@ class MyApp(MDApp):
         # redireccionar a la pantalla qrW
         self.root.ids.screen_manager.current = "QR"
         # crea una instancia de la aamera
-        self.camera = Camera(index=0)
-        # agregar la camara a la vista actual
-        current_screen.add_widget(self.camera)
-        # iniciar la camara
-        self.camera.play = True
-        # missatge informatiu
-        print("Obrint la cámara...")
+        
 
     def close_camera(self):
         # detener la reproducción de la cámara
         self.camera.play = False
         # eliminar el widget de la cámara de la pantalla actual
         current_screen = self.root.ids.screen_manager.get_screen("QR")
-        current_screen.remove_widget(self.camera)
-        # eliminar la referencia a la instancia de la cámara
-        del self.camera
-        # redirigir a la pantalla de inventario
-        self.root.ids.screen_manager.current = "Inventari"
-        # missatge informatiu
-        print("Tancant la cámara...")
+        current_screen.remove_widget(self.camera)        
         
 MyApp().run()
