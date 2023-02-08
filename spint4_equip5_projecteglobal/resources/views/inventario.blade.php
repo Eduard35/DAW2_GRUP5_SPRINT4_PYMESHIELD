@@ -17,8 +17,8 @@
         <th>Tipo</th>
         <th>Descripcion</th>
         <th>Estado</th>
-        <th>Núm Serie</th>
-      </tr>
+        <th>Núm Serie</th>          
+        </tr>
     </thead>
     <tbody class="">
     @foreach ($dispositivosInventario as $inventario)
@@ -36,8 +36,40 @@
     @endforeach
     </tbody>
   </table>
-  <pagination :data="dispositivosInventario" :per-page="10"></pagination>
+  <nav>
+      <ul class="pagination">
+        <li v-for="index in totalPages">
+          <a href="#" @click.prevent="changePage(index)">{{ index }}</a>
+        </li>
+      </ul>
+    </nav>
 </div>
+
+<script>
+export default {
+  data() {
+    return {
+      devices: [], // Aquí debes asignar los dispositivos del inventario
+      itemsPerPage: 10, // Número de elementos por página
+      currentPage: 1, // Página actual
+    };
+  },
+  computed: {
+    totalPages() {
+      return Math.ceil(this.devices.length / this.itemsPerPage);
+    },
+    paginatedData() {
+      let start = (this.currentPage - 1) * this.itemsPerPage;
+      return this.devices.slice(start, start + this.itemsPerPage);
+    },
+  },
+  methods: {
+    changePage(index) {
+      this.currentPage = index;
+    },
+  },
+};
+</script>
 
 @stop
 

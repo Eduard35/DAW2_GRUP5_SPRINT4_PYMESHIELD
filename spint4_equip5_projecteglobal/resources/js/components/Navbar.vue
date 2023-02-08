@@ -107,7 +107,7 @@
 
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { AcademicCapIcon, Bars3Icon, BellIcon, CalendarDaysIcon, CurrencyEuroIcon, HomeIcon, QuestionMarkCircleIcon, QrCodeIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { AcademicCapIcon, Bars3Icon, BellIcon, CalendarDaysIcon, CurrencyEuroIcon, HomeIcon, QuestionMarkCircleIcon, QrCodeIcon, XMarkIcon, ComputerDesktopIcon, ArrowUpTrayIcon} from '@heroicons/vue/24/outline'
 import VueAvatar from "@webzlodimir/vue-avatar";
 import "@webzlodimir/vue-avatar/dist/style.css";
 
@@ -124,6 +124,10 @@ const navigation = [
   { name: 'Presupuestos', href: '#', current: false, icon: CurrencyEuroIcon },
   { name: 'Calendario', href: '#', current: false, icon: CalendarDaysIcon },
   { name: 'Inventario', href: '/inventario' , current: false, icon: QrCodeIcon },
+  { name: 'Dispositivos', href: '/dispositivo' , current: false, icon: ComputerDesktopIcon },
+  { name: 'Restaurar Disp.', href: '/restaurar' , current: false, icon: ArrowUpTrayIcon },
+
+
 ]
 //@mouseover="showDropdown = true" @mouseleave="showDropdown = false"
 //Opcions d'admin
