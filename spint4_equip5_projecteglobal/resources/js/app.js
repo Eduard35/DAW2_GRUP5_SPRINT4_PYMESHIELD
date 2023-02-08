@@ -1,12 +1,16 @@
-import { createApp } from "vue";
+import { createApp } from "vue/dist/vue.esm-bundler"
 
 import App from "./components/Navbar.vue";
+import RouterWeb from '../js/router/index'
 
 import restaurar from "./components/restaurar.vue";
 
 
-createApp(App).mount("#navbar");
+const app = createApp({})
 
-app.component('restaurar', restaurar)
+app.use(RouterWeb)
 
 app.mount("#app")
+// Header
+createApp(App).mount("#navbar");
+
