@@ -6,7 +6,7 @@
 
 <h1 class="text-center p-2 mt-2 text-3xl">Inventario dispositivos</h1>
 
-<div class="flex justify-center -m-1.5">
+<div class="flex justify-center mb-6">
 <table class="container shadow-xl table-auto w-full rounded-lg border-2 border-orange-500 bg-white mt-5 w-99 text-center">
     <thead class="bg-orange-500 text-white">
       <tr>
@@ -20,39 +20,23 @@
         <th>Núm Serie</th>
       </tr>
     </thead>
-    <tbody>
-      <tr class="bg-orange-100 border-b hover:bg-orange-300">
-        <td>34654</td>
-        <td>Portatil Razer Blade 15</td>
-        <td>A01B01CD00E</td>
-        <td>34654</td>
-        <td>34654</td>
-        <td>34654</td>
-        <td>34654</td>
-        <td>34654</td>
+    <tbody class="">
+    @foreach ($dispositivosInventario as $inventario)
+
+      <tr class="bg-orange-100 border-b hover:bg-orange-300" v-for="(item, index) in paginatedData" :key="index">
+        <td>{{$inventario->brand}}</td>
+        <td>{{$inventario->model}}</td>
+        <td>{{$inventario->mac_ethernet}}</td>
+        <td>{{$inventario->mac_wifi}}</td>
+        <td>{{$inventario->type_device_id}}</td>
+        <td>{{$inventario->description}}</td>
+        <td>{{$inventario->state}}</td>
+        <td>{{$inventario->serial_number}}</td>
       </tr>
-      <tr class="bg-orange-200 border-b hover:bg-orange-300">
-        <td>34655</td>
-        <td>Portatil Razer Blade 14</td>
-        <td>A02B02CD01E</td>
-        <td>34654</td>
-        <td>34654</td>
-        <td>34654</td>
-        <td>34654</td>
-        <td>34654</td>
-      </tr>
-      <tr class="bg-orange-100 border-b hover:bg-orange-300">
-        <td>34656</td>
-        <td>Portatil Razer Blade 17</td>
-        <td>A12B062W98Z</td>
-        <td>34654</td>
-        <td>34654</td>
-        <td>34654</td>
-        <td>34654</td>
-        <td>34654</td>
-      </tr>
+    @endforeach
     </tbody>
   </table>
+  <pagination :data="dispositivosInventario" :per-page="10"></pagination>
 </div>
 
 @stop

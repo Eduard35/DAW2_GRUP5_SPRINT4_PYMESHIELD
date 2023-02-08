@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RestoreController;
+use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\ImageDeviceController;
 
 /*
@@ -36,7 +37,7 @@ Route::put('/dispositivo', [DevicesController::class, 'modificar']);
 Route::patch('/dispositivo', [DevicesController::class, 'eliminar']);
 
 //Mostrar inventari
-Route::get('/inventario', [MainController::class, 'inventario']);
+Route::get('/inventario', [InventoryController::class, 'inventario']);
 
 // Imatges
 Route::get('/imagenes/{id}', [ImageDeviceController::class, 'mostrar'])->name('image.mostrar');
