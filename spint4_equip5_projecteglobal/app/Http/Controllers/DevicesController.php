@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Device;
 
 class DevicesController extends Controller
 {
     public function mostrarDispositivos(){
-        return view("mostrarDispositivos");
+        $dispositivos = Device::all();
+        return view("mostrarDispositivos", compact('dispositivos'));
     }
     
     public function crear(){
