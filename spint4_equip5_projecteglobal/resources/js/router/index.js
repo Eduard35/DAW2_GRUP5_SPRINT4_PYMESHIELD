@@ -1,12 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router"
 
 const Restaurar = () => import('../components/restaurar.vue')
+const ImageForm = () => import('../components/image-form.vue')
 
 const routes = [
     {
         path: '/restaurar',
         name: 'Restaurar',
         component: Restaurar
+    },
+    {
+        path: '/imagenes',
+        name: 'ImageForm',
+        component: ImageForm
     }
 ]
 
