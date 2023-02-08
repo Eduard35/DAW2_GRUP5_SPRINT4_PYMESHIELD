@@ -7,7 +7,7 @@
 <h1 class="text-center p-2 mt-2 text-3xl">Inventario dispositivos</h1>
 
 <div class="flex justify-center mb-6">
-<table class="container shadow-xl table-auto w-full rounded-lg border-2 border-orange-500 bg-white mt-5 w-99 text-center">
+<table class="container shadow-xl table-auto w-full rounded-lg bg-white mt-5 w-99 text-center">
     <thead class="bg-orange-500 text-white">
       <tr>
         <th>Marca</th>
@@ -36,8 +36,13 @@
     @endforeach
     </tbody>
   </table>
-  <navigation-pagination :paginatedData="dispositivosInventario"></navigation-pagination>
 </div>
+
+<div class="flex justify-center mb-3">
+{{$dispositivosInventario->links()}}
+</div>
+
+<navigation-pagination :paginatedData="dispositivosInventario"></navigation-pagination>
 
 <script>
 import NavigationPagination from './NavigationPagination.vue'
