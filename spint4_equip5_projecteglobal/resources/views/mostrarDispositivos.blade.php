@@ -5,7 +5,7 @@
 @section('content')
 <h1 class="text-center p-8 mt-2 text-3xl">Listado dispositivos</h1>
 <div style="display:flex; justify-content:center">
-<table class="table-auto rounded-lg border-2 border-orange-500 bg-white mt-5 p-3 text-center">
+<table class="table-auto rounded-lg border-2 border-orange-500 bg-white m-5 text-center">
     <thead class="bg-orange-500 text-white">
       <tr>
         <th></th>
