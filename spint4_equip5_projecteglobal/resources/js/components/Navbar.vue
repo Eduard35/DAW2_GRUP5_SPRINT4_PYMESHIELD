@@ -111,21 +111,21 @@
   import VueAvatar from "@webzlodimir/vue-avatar";
   import "@webzlodimir/vue-avatar/dist/style.css";
 
-  const user = {
-    name: 'Usuario Random',
-    email: 'admin@pymeshield.com',
-    imageUrl:
-      '/img/default_profile.png',
-  }
-  const navigation = [
-    { name: 'Inicio', href: '#', current: true, icon: HomeIcon },
-    { name: 'Encuestas', href: '#', current: false, icon: QuestionMarkCircleIcon },
-    { name: 'Formación', href: '#', current: false, icon: AcademicCapIcon },
-    { name: 'Presupuestos', href: '#', current: false, icon: CurrencyEuroIcon },
-    { name: 'Calendario', href: '#', current: false, icon: CalendarDaysIcon },
-    { name: 'Inventario', href: '/inventario' , current: false, icon: QrCodeIcon },
-    { name: 'Dispositivos', href: '/dispositivo' , current: false, icon: ComputerDesktopIcon },
-    { name: 'Restaurar Disp.', href: '/restaurar' , current: false, icon: ArrowUpTrayIcon },
+const user = {
+  name: 'Usuario Random',
+  email: 'admin@pymeshield.com',
+  imageUrl:
+    '/img/default_profile.png',
+}
+const navigation = [
+  { name: 'Inicio', href: '#', current: false, icon: HomeIcon },
+  { name: 'Encuestas', href: '#', current: false, icon: QuestionMarkCircleIcon },
+  { name: 'Formación', href: '#', current: false, icon: AcademicCapIcon },
+  { name: 'Presupuestos', href: '#', current: false, icon: CurrencyEuroIcon },
+  { name: 'Calendario', href: '#', current: false, icon: CalendarDaysIcon },
+  { name: 'Inventario', href: '/inventario' , current: true, icon: QrCodeIcon },
+  { name: 'Dispositivos', href: '/dispositivo' , current: false, icon: ComputerDesktopIcon },
+  { name: 'Restaurar Disp.', href: '/restaurar' , current: false, icon: ArrowUpTrayIcon },
 
 
   ]
