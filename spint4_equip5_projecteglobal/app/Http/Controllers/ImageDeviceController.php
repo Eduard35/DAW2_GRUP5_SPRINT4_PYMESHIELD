@@ -14,24 +14,27 @@ class ImageDeviceController extends Controller
     }
 
     public function mostrar($id_device) {
-        return asset('storage/images/7k6YFGtzHyvadgeXj5sIC43Ah0FNtIqcjYX6rEZ2.png');
-        //return Storage::url('public/images/0DSXCM3MQiWNqawwRuBhSkZl3dFyQdJrqSDTZgqo.jpg');
-        //return "<img src='". Storage::url('app/public/images/7k6YFGtzHyvadgeXj5sIC43Ah0FNtIqcjYX6rEZ2.jpg')  ." '>";
-        //return '<img src="/storage/images/7k6YFGtzHyvadgeXj5sIC43Ah0FNtIqcjYX6rEZ2.jpg">';
-        //return ImageDevice::where('device_id', $id_device)->get();
+        //TODO: Aquí hem de mostrar TOTES les imatges, no només una
+        $files = ImageDevice::where('device_id', $id_device)->get();
+        foreach ($files as $file) {
+            echo "<img src='". asset(str_replace('storage/public/', 'storage/', $file->location)) ." '>";
+        }
     }
 
     public function guardar(Request $request) {
 
+        // Validem que la imatge sigui correcta
         $request->validate([
             'image' => 'image|mimes:png,jpg,jpeg|max:2048'
         ]);
 
+        // Guardem l'arxiu i recuperem la ruta
         $route = $request->file('file')->store('public/images');
+
+        // Guardem a la base de dades la ruta a aquesta imatge
         ImageDevice::create([
-            'location' => $route,
+            'location' => 'storage/' . $route,
             'device_id' => 1
         ]);
-        //Storage::disk('local')->put("images", $file);
     }
 }
