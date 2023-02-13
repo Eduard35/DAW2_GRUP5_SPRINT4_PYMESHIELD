@@ -3,10 +3,12 @@
         <input type="file" name="files[]" id="" @change="handleFileUpload( $event )" multiple>
         <button type="button" @click="uploadImage()">Send</button>
     </form>
+
 </template>
 
 <script>
     import axios from 'axios'
+
 
     export default {
         name: 'Form',
@@ -34,7 +36,11 @@
                 })
                 .then(() => console.log('Èxit!'))
                 
+            },
+            mounted() {
+                
             }
-        }
+        },
+
     }
 </script>

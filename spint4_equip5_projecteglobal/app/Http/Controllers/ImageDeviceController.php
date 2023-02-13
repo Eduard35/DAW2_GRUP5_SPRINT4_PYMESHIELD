@@ -25,7 +25,7 @@ class ImageDeviceController extends Controller
 
         // Validem que la imatge sigui correcta
         $request->validate([
-            'image' => 'image|mimes:png,jpg,jpeg|max:2048'
+            'files.*' => 'image|mimes:png,jpg,jpeg|max:2048'
         ]);
 
         // Guardem l'arxiu i recuperem la ruta
