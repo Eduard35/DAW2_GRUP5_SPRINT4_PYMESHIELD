@@ -29,12 +29,18 @@ class ImageDeviceController extends Controller
         ]);
 
         // Guardem l'arxiu i recuperem la ruta
-        $route = $request->file('file')->store('public/images');
+        $files = $request->file('files');
+        //Storage::disk('local')->put('test', $files);
 
-        // Guardem a la base de dades la ruta a aquesta imatge
-        ImageDevice::create([
-            'location' => 'storage/' . $route,
-            'device_id' => 1
-        ]);
+        foreach ($files as $file) {
+            $route = $file->store('public/images');
+
+            // Guardem a la base de dades la ruta a aquesta imatge
+            ImageDevice::create([
+                'location' => 'storage/' . $route,
+                'device_id' => 1
+            ]);
+        }
+
     }
 }
