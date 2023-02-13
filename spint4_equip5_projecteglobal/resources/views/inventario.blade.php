@@ -23,7 +23,7 @@
     <tbody class="">
     @foreach ($dispositivosInventario as $inventario)
 
-      <tr class="bg-orange-100 border-b hover:bg-orange-300">
+      <tr class="h-14 bg-orange-100 border-b hover:bg-orange-300">
         <td>{{$inventario->brand}}</td>
         <td>{{$inventario->model}}</td>
         <td>{{$inventario->mac_ethernet}}</td>
