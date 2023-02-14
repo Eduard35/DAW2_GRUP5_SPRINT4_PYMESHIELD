@@ -19,7 +19,7 @@
         <th>Núm Serie</th>
         <th><button data-modal-target="crear" data-modal-toggle="crear" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" type="button">
           crear
-        </button><button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded">
+        </button><button data-modal-target="eliminar" data-modal-toggle="eliminar" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded">
           Eliminar
         </button>
       </tr>
@@ -41,11 +41,12 @@
         <td><button data-modal-target="modificar{{ $inventario->id }}" data-modal-toggle="modificar{{ $inventario->id }}" class="mt-2 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 border border-yellow-700 rounded">
           Modificar
         </button>
-        <button class="mb-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded">
+        <button data-modal-target="eliminar{{ $inventario->id }}" data-modal-toggle="eliminar{{ $inventario->id }}" class="mb-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded">
           Eliminar
         </button>
         </td>
       </tr>
+      
       @include ("modals/modificarDispositivo")
       @endforeach
 @include ("modals/crearDispositivo")
