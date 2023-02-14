@@ -48,6 +48,7 @@
       </tr>
       
       @include ("modals/modificarDispositivo")
+      @include ("modals/eliminarDispositivo")
       @endforeach
 @include ("modals/crearDispositivo")
     </tbody>
