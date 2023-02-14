@@ -15,8 +15,11 @@ class RestoreController extends Controller
         return view("restaurar", compact("listar"));
     }
 
+    // Funcio per a restaurar
     public function restaurar(){
 
+        $restaurar = Device::update(['hidden', date('Y-m-d')]);
+        return redirect('/restaurar');
     }
 }
 
