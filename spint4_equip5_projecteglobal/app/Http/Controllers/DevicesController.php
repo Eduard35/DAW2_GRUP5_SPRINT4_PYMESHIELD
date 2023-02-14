@@ -30,6 +30,7 @@ class DevicesController extends Controller
 
     public function modificar(Request $request, $id){
         $dispositiu = Device::find($id);
+        dd($id);
         $dispositiu->brand = $request->input('brand');
         $dispositiu->model = $request->input('model');
         $dispositiu->mac_ethernet = $request->input('mac_ethernet');
