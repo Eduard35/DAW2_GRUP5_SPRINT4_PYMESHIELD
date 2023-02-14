@@ -42,6 +42,7 @@
                             Restaurar
                           </button>
                     </tr>
+                    @include ("modals/restaurarDispositivo")
                     @endforeach
             </tbody>
         </table>
