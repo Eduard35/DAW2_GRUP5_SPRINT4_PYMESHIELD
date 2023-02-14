@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Device;
 use App\Models\ImageDevice;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
@@ -14,11 +15,10 @@ class ImageDeviceController extends Controller
     }
 
     public function mostrar($id_device) {
-        //TODO: Aquí hem de mostrar TOTES les imatges, no només una
-        $files = ImageDevice::where('device_id', $id_device)->get();
-        foreach ($files as $file) {
-            echo "<img src='". asset(str_replace('storage/public/', 'storage/', $file->location)) ." '>";
-        }
+        //TODO: Això ara retorna les ubicacions. Mostrar-ho s'ha d'encarregar el BLADE.
+        $device = Device::find($id_device);
+        $files = ImageDevice::select('location')->where('device_id', $id_device)->get();
+        return view('images', compact('files', 'device'));
     }
 
     public function guardar(Request $request) {
@@ -37,7 +37,7 @@ class ImageDeviceController extends Controller
 
             // Guardem a la base de dades la ruta a aquesta imatge
             ImageDevice::create([
-                'location' => 'storage/' . $route,
+                'location' => 'storage/' . substr($route, 7), // eliminem "public/" de la ruta
                 'device_id' => 1
             ]);
         }
