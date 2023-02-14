@@ -1,47 +1,46 @@
-<!-- Codi de la pàgina -->
 <template>
     <form method="post" id="form">
-        <input type="file" name="file" id="" @change="handleFileUpload( $event )">
+        <input type="file" name="files[]" id="" @change="handleFileUpload( $event )" multiple>
         <button type="button" @click="uploadImage()">Send</button>
     </form>
+
 </template>
 
-<!-- Estils per a esta vista -->
-<style scoped>
-
-</style>
-
-<!-- Scripts per a la vista -->
 <script>
     import axios from 'axios'
+
 
     export default {
         name: 'Form',
         data() {
             return {
                 form: {
-                    file: '',
-                    id: 0
+                    files: []
                 }
             }
         },
         methods: {
             handleFileUpload(event) {
-                this.form.file = event.target.files[0]
+                this.form.files = event.target.files
             },
             uploadImage() {
                 let formData = new FormData()
-                formData.append('file', this.form.file)
-
+                for (let i = 0; i < this.form.files.length; i++) {
+                    formData.append('files[]', this.form.files[i])
+                }
+                console.log(formData)
                 axios.post('/imagenes', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
                 })
                 .then(() => console.log('Èxit!'))
-
+                
+            },
+            mounted() {
                 
             }
-        }
+        },
+
     }
 </script>
