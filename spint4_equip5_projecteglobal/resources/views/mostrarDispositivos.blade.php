@@ -46,7 +46,7 @@
         </button>
         </td>
       </tr>
-      
+      @include ("modals/eliminarDispositivo")
       @include ("modals/modificarDispositivo")
       @endforeach
 @include ("modals/crearDispositivo")

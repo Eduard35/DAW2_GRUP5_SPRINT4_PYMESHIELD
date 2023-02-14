@@ -32,8 +32,8 @@ Route::patch('/restaurar', [RestoreController::class, 'restaurar']);
 
 //Mostrar Dispositivos
 Route::get('/dispositivo', [DevicesController::class, 'mostrarDispositivos']);
-Route::post('/dispositivo', [DevicesController::class, 'crear']);
-Route::put('/dispositivo', [DevicesController::class, 'modificar']);
+Route::post('/dispositivo', [DevicesController::class, 'crear'])->name('dispositiu.crear');
+Route::put('/dispositivo', [DevicesController::class, 'modificar'])->name('dispositiu.update');
 Route::patch('/dispositivo', [DevicesController::class, 'eliminar']);
 
 //Mostrar inventari

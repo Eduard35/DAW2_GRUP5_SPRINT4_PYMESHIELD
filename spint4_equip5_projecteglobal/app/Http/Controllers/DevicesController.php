@@ -28,8 +28,19 @@ class DevicesController extends Controller
         return redirect()->route('products.index')->with('success', 'Dispositivo creado satisfactoriamente');
     }
 
-    public function modificar(){
-        
+    public function modificar(Request $request, $id){
+        $dispositiu = Device::find($id);
+        $dispositiu->brand = $request->input('brand');
+        $dispositiu->model = $request->input('model');
+        $dispositiu->mac_ethernet = $request->input('mac_ethernet');
+        $dispositiu->mac_wifi = $request->input('mac_wifi');
+        $dispositiu->description = $request->input('description');
+        $dispositiu->state = $request->input('state');
+        $dispositiu->serial_number = $request->input('serial_number');
+        $dispositiu->type_device_id = $request->input('type_device_id');
+        $dispositiu->save();
+
+        return redirect()->route('products.index')->with('success', 'Dispositivo modificat satisfactoriamente');
     }
 
     public function eliminar(){
