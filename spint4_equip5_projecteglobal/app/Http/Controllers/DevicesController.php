@@ -44,6 +44,8 @@ class DevicesController extends Controller
     }
 
     public function eliminar(){
-
+        $dispositiu = new Device();
+        $dateNow = date('Y-m-d');
+        $dispositiu->hidden = $dateNow;
     }
 }
