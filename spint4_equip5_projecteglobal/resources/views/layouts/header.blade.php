@@ -26,10 +26,8 @@
         <div id="navbar"></div>
     </div>
     <!-- Vue.js javascript -->
-    <main>
-        <div id="app">
+
             @yield('content')
-        </div>
     </main>
     <!-- Footer include -->
     @include('layouts.parts.footer')
