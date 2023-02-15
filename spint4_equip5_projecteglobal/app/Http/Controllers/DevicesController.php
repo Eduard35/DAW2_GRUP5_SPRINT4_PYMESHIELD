@@ -44,9 +44,12 @@ class DevicesController extends Controller
         return redirect()->route('products.index')->with('success', 'Dispositivo modificat satisfactoriamente');
     }
 
-    public function eliminar(){
-        $dispositiu = new Device();
+    public function eliminar($id){
+        $dispositiu = Device::find($id);
         $dateNow = date('Y-m-d');
         $dispositiu->hidden = $dateNow;
+        $dispositiu->save();
+
+        return back();
     }
 }
