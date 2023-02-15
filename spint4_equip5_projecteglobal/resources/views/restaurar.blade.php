@@ -4,6 +4,9 @@
 
 @section('content')
 
+<div id="app">
+
+
     <h1 class="text-center p-2 mt-2 text-3xl">Restaurar</h1>
 
 
@@ -38,11 +41,13 @@
                         <td>{{ $dispositivo->tag }}</td>
                         <td>{{ $dispositivo->serial_number }}</td>
                         <td>{{ $dispositivo->user_id }}</td>
-                        <td><button class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-                            Restaurar
-                          </button>
+                        <td><button data-modal-target="restaurar{{ $dispositivo->id }}" data-modal-toggle="restaurar{{ $dispositivo->id }}"
+                                class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                                Restaurar
+                            </button>
                     </tr>
-                    @endforeach
+                    @include ('modals/restaurarDispositivo')
+                @endforeach
             </tbody>
         </table>
     </div>
@@ -50,4 +55,5 @@
         <router-view />
     </div>
 
+</div>
 @endsection

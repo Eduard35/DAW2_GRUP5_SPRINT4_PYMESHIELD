@@ -13,7 +13,12 @@ const routes = [
         path: '/imagenes',
         name: 'ImageForm',
         component: ImageForm
-    }
+    },
+    {
+        path: '/imagenes/:id',
+        name: 'ImageForm',
+        component: ImageForm
+    },
 ]
 
 const router = createRouter({
