@@ -2,7 +2,8 @@
       <div id="crear" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
         <div class="relative w-full h-full max-w-2xl md:h-auto">
             <!-- Modal content -->
-            <form action="{{ route('dispositiu.crear', $inventario->id) }}" method="POST">
+            <form action="{{ route('dispositiu.crear') }}" method="POST">
+                @csrf
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <!-- Modal header -->
                 <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
@@ -19,23 +20,23 @@
                     <div class="flex flex-row justify-around text-center">
                         <div style="margin-left:0px; margin-right:0px;">
                             <p>Marca</p>
-                            <input class="border text-center" placeholder="Razer"></input>
+                            <input class="border text-center" name="brand" placeholder="Razer"></input>
                             <p>MAC</p>
-                            <input class="border text-center" placeholder="00:1B:44:11:3A:B7"></input>
+                            <input class="border text-center" name="mac_ethernet" placeholder="00:1B:44:11:3A:B7"></input>
                             <p>Tipo</p>
-                            <input class="border text-center" placeholder="Poratil"></input>
+                            <input class="border text-center" name="type_device_id" placeholder="Poratil"></input>
                             <p>Estado</p>
-                            <input class="border text-center" placeholder="Correcteo-Defectuoso-En reparacion"></input>
+                            <input class="border text-center" name="state" placeholder="Correcteo-Defectuoso-En reparacion"></input>
                         </div>
                         <div style="margin-left:0px; margin-right:20px;">
                             <p>Model</p>
-                            <input class="border text-center" placeholder="Blade 15"></input>
+                            <input class="border text-center" name="model" placeholder="Blade 15"></input>
                             <p>Wifi</p>
-                            <input class="border text-center" placeholder="00:1B:44:11:3A:B7"></input>
+                            <input class="border text-center" name="mac_wifi" placeholder="00:1B:44:11:3A:B7"></input>
                             <p>Descripcion</p>
-                            <input class="border text-center" placeholder="Comprat al 2020, cop a la dreta..."></input>
+                            <input class="border text-center" name="description" placeholder="Comprat al 2020, cop a la dreta..."></input>
                             <p>Núm Serie</p>
-                            <input class="border text-center" placeholder="BY17WWAAAA00001"></input>
+                            <input class="border text-center" name="serial_number" placeholder="BY17WWAAAA00001"></input>
                         </div>
                     </div>
                     </p>
