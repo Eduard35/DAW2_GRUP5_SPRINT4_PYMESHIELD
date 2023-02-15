@@ -117,18 +117,25 @@ const user = {
   imageUrl:
     '/img/default_profile.png',
 }
+
 const navigation = [
   { name: 'Inicio', href: '#', current: false, icon: HomeIcon },
   { name: 'Encuestas', href: '#', current: false, icon: QuestionMarkCircleIcon },
   { name: 'Formación', href: '#', current: false, icon: AcademicCapIcon },
   { name: 'Presupuestos', href: '#', current: false, icon: CurrencyEuroIcon },
   { name: 'Calendario', href: '#', current: false, icon: CalendarDaysIcon },
-  { name: 'Inventario', href: '/inventario' , current: true, icon: QrCodeIcon },
+  { name: 'Inventario', href: '/inventario' , current: false, icon: QrCodeIcon },
   { name: 'Dispositivos', href: '/dispositivo' , current: false, icon: ComputerDesktopIcon },
   { name: 'Restaurar Disp.', href: '/restaurar' , current: false, icon: ArrowUpTrayIcon },
-
-
   ]
+
+const currentUrl = window.location.pathname;
+navigation.forEach(item => {
+    if (item.href === currentUrl) {
+      item.current = true;
+    }
+  });
+
   //@mouseover="showDropdown = true" @mouseleave="showDropdown = false"
   //Opcions d'admin
 
