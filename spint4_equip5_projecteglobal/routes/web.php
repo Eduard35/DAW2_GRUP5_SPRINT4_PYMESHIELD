@@ -28,7 +28,7 @@ Route::get('/index', HomeController::class);
 
 // Restaurar
 Route::get('/restaurar', [RestoreController::class, 'listar']);
-Route::patch('/restaurar', [RestoreController::class, 'restaurar']) ->name('restaurar.restaurar');
+Route::patch('/restaurar/{id}', [RestoreController::class, 'restaurar']) ->name('restaurar.restaurar');
 
 //Mostrar Dispositivos
 Route::get('/dispositivo', [DevicesController::class, 'mostrarDispositivos']);
