@@ -11,14 +11,15 @@ class ImageDeviceController extends Controller
 {
 
     public function index() {
-        return view('imageform');
+        return view('images');
     }
 
     public function mostrar($id_device) {
         //TODO: Això ara retorna les ubicacions. Mostrar-ho s'ha d'encarregar el BLADE.
         $device = Device::find($id_device);
         $files = ImageDevice::select('location')->where('device_id', $id_device)->get();
-        return view('images', compact('files', 'device'));
+        return $files;
+        //return view('images', compact('files', 'device'));
     }
 
     public function guardar(Request $request) {

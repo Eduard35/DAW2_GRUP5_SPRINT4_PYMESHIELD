@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Device;
+use App\Models\ImageDevice;
 
 class DevicesController extends Controller
 {
@@ -11,6 +12,12 @@ class DevicesController extends Controller
         $dispositivos = Device::all();
         $dispositivos = Device::whereIn('type_device_id', $dispositivos->pluck('type_device_id'))->paginate(10);
         return view("mostrarDispositivos", compact('dispositivos'));
+    }
+
+    public function show($id_device) {
+        $device = Device::find($id_device);
+        $files = ImageDevice::select('location')->where('device_id', $id_device)->get();
+        return view('images', compact('files', 'device'));
     }
     
     public function crear(Request $request){

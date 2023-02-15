@@ -21,6 +21,7 @@
         "@webzlodimir/vue-avatar": "^0.0.8",
         "dropzone": "^6.0.0-beta.2",
         "flowbite": "^1.6.3",
+        "swiper": "^9.0.5",
         "vue": "^3.2.36",
         "vue-loader": "^17.0.1",
         "vue-router": "4.0.13",
