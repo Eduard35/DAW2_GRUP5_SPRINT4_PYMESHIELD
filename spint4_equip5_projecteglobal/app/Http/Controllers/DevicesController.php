@@ -43,9 +43,12 @@ class DevicesController extends Controller
         return back();
     }
 
-    public function eliminar(){
-        $dispositiu = new Device();
+    public function eliminar($id){
+        $dispositiu = Device::find($id);
         $dateNow = date('Y-m-d');
         $dispositiu->hidden = $dateNow;
+        $dispositiu->save();
+
+        return back();
     }
 }
