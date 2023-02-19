@@ -4,13 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Device;
+use App\Models\ImageDevice;
 
 class DevicesController extends Controller
 {
     public function mostrarDispositivos(){
-        $dispositivos = Device::all();
-        $dispositivos = Device::whereIn('type_device_id', $dispositivos->pluck('type_device_id'))->paginate(10);
+        $dispositivos = Device::where('hidden', '=', null)
+            ->paginate(10);
         return view("mostrarDispositivos", compact('dispositivos'));
+    }
+
+    public function show($id_device) {
+        $device = Device::find($id_device);
+        $files = ImageDevice::select('location')->where('device_id', $id_device)->get();
+        return view('images', compact('files', 'device'));
     }
     
     public function crear(Request $request){
@@ -25,12 +32,11 @@ class DevicesController extends Controller
         $dispositiu->type_device_id = $request->input('type_device_id');
         $dispositiu->save();
 
-        return redirect()->route('products.index')->with('success', 'Dispositivo creado satisfactoriamente');
+        return back();
     }
 
     public function modificar(Request $request, $id){
         $dispositiu = Device::find($id);
-        dd($id);
         $dispositiu->brand = $request->input('brand');
         $dispositiu->model = $request->input('model');
         $dispositiu->mac_ethernet = $request->input('mac_ethernet');
@@ -41,7 +47,7 @@ class DevicesController extends Controller
         $dispositiu->type_device_id = $request->input('type_device_id');
         $dispositiu->save();
 
-        return redirect()->route('products.index')->with('success', 'Dispositivo modificat satisfactoriamente');
+        return back();
     }
 
     public function eliminar($id){

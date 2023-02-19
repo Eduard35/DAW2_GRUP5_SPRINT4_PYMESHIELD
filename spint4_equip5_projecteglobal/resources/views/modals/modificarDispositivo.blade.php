@@ -4,8 +4,9 @@
         <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <!-- Modal header -->
-            <form action="{{ route('dispositiu.update', $inventario->id) }}">
-              @method('PUT');
+            <form action="{{ route('dispositiu.update', $inventario->id) }}" method="POST">
+              @method('PUT')
+              @csrf
             <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white" style="border-top: 20px">
                     Modificar dispositiu
@@ -20,11 +21,11 @@
                 <div class="flex flex-row justify-around text-center">
                     <div style="margin-left:0px; margin-right:0px;">
                         <p>Marca</p>
-                        <input class="border text-center" placeholder="{{$inventario->brand}}" value="{{$inventario->brand}}"></input>
+                        <input class="border text-center" name="brand"placeholder="{{$inventario->brand}}" value="{{$inventario->brand}}"></input>
                         <p>MAC</p>
-                        <input class="border text-center" placeholder="{{$inventario->mac_ethernet}}" value="{{$inventario->mac_ethernet}}"></input>
+                        <input class="border text-center" name="mac_ethernet"placeholder="{{$inventario->mac_ethernet}}" value="{{$inventario->mac_ethernet}}"></input>
                         <p>Tipo</p>
-                        <input class="border text-center" placeholder="{{$inventario->type_device_id}}" value="{{$inventario->type_device_id}}"></input>
+                        <input class="border text-center" name="type_device_id"placeholder="{{$inventario->type_device_id}}" value="{{$inventario->type_device_id}}"></input>
                         <p>Estado</p>
                         
 <button id="modificar{{ $inventario->id }}" data-dropdown-toggle="dropdownHelperRadio" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Estado dispositivo<svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
@@ -77,13 +78,13 @@
                     </div>
                     <div style="margin-left:0px; margin-right:20px;">
                         <p>Model</p>
-                        <input class="border text-center" placeholder="{{$inventario->model}}" value="{{$inventario->model}}"></input>
+                        <input class="border text-center" name="model" placeholder="{{$inventario->model}}" value="{{$inventario->model}}"></input>
                         <p>Wifi</p>
-                        <input class="border text-center" placeholder="{{$inventario->mac_wifi}}" value="{{$inventario->mac_wifi}}"></input>
+                        <input class="border text-center" name="mac_wifi" placeholder="{{$inventario->mac_wifi}}" value="{{$inventario->mac_wifi}}"></input>
                         <p>Descripcion</p>
-                        <input class="border text-center" placeholder="{{$inventario->description}}" value="{{$inventario->description}}"></input>
+                        <input class="border text-center" name="description" placeholder="{{$inventario->description}}" value="{{$inventario->description}}"></input>
                         <p>Núm Serie</p>
-                        <input class="border text-center" placeholder="{{$inventario->serial_number}}" value="{{$inventario->serial_number}}"></input>
+                        <input class="border text-center" name="serial_number" placeholder="{{$inventario->serial_number}}" value="{{$inventario->serial_number}}"></input>
                     </div>
                 </div>
                 </p>

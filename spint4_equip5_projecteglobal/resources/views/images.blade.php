@@ -35,6 +35,7 @@
             <p><strong>MAC Ethernet:</strong> {{$device->mac_ethernet}}</p>
             <p><strong>MAC Wifi:</strong> {{$device->mac_wifi}}</p>
         </div>
+          
     </div>
 
     <div class="p-3 col-span-3">
@@ -44,15 +45,14 @@
             <button data-modal-target="addImages" data-modal-toggle="addImages" class="bg-orange-500 hover:bg-orange-400 block text-white focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 mt-3 text-center" type="button">
                 Añadir imágenes
             </button>
+            <button data-modal-target="showImages" data-modal-toggle="showImages" class="bg-orange-500 hover:bg-orange-400 block text-white focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 mt-3 text-center" type="button">
+                Ver imágenes
+            </button>
         </div>
 
-        <div class="grid grid-cols-2 gap-3 mt-5">
+        <div class="grid grid-cols-2 gap-5 mt-5">
 
-            @foreach ($files as $file)
-
-                <img src="{{asset($file->location)}}" alt="image" class="rounded-md">
-
-            @endforeach
+            
         </div>
         
     </div>
@@ -61,42 +61,8 @@
 <div id="fullpage" onclick="this.style.display='none';"></div>
 
 @include('modals.addImages')
-
-<script>
-function getPics() { //just for this demo
-    console.log('hello')
-    const imgs = document.querySelectorAll('img');
-    const fullPage = document.querySelector('#fullpage');
-
-    imgs.forEach(img => {
-        img.addEventListener('click', function() {
-            if (img.requestFullscreen) {
-            img.requestFullscreen();
-            } else if (img.msRequestFullscreen) {
-            img.msRequestFullscreen();
-            } else if (img.mozRequestFullScreen) {
-            img.mozRequestFullScreen();
-            } else if (img.webkitRequestFullScreen) {
-            img.webkitRequestFullScreen();
-            }
-        })
-    });
-}
-
-function fullscreen(element) {
-    if (element.requestFullscreen) {
-      element.requestFullscreen();
-    } else if (element.msRequestFullscreen) {
-      element.msRequestFullscreen();
-    } else if (element.mozRequestFullScreen) {
-      element.mozRequestFullScreen();
-    } else if (element.webkitRequestFullScreen) {
-      element.webkitRequestFullScreen();
-    }
-}
-
-document.addEventListener('DOMContentLoaded', getPics)
-</script>
+{{-- @include('modals.showImages') --}}
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 @stop
 
 <html>

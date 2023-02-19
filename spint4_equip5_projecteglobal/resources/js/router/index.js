@@ -16,7 +16,7 @@ const routes = [
         component: ImageForm
     },
     {
-        path: '/imagenes/:id',
+        path: '/dispositivo/:id',
         name: 'ImageForm',
         component: ImageForm
     },

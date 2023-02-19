@@ -10,7 +10,13 @@ export default defineConfig({
         },
     },
     plugins: [
-        vue(),
+        vue({
+            template: {
+                compilerOptions: {
+                  isCustomElement: (tag) => ['swiper-slide', 'swiper-container'].includes(tag),
+                }
+              }
+        }),
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             preprocessors:{
