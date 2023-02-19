@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router"
 const Restaurar = () => import('../components/restaurar.vue')
 const ImageForm = () => import('../components/image-form.vue')
 
+
 const routes = [
     {
         path: '/restaurar',
@@ -19,6 +20,7 @@ const routes = [
         name: 'ImageForm',
         component: ImageForm
     },
+
 ]
 
 const router = createRouter({

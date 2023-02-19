@@ -4,7 +4,12 @@
 
 @section('content')
 
+<div id="app">
 <h1 class="text-center p-2 mt-2 text-3xl">Inventario dispositivos</h1>
+
+<div class="flex justify-between mx-12">
+  <buscador></buscador>
+</div>
 
 <div class="flex justify-center mb-6">
 <table class="container shadow-xl table-auto w-full rounded-lg bg-white mt-5 w-99 text-center">
@@ -42,6 +47,6 @@
 {{$dispositivosInventario->links()}}
 </div>
 
-@stop
+</div>
+@endsection
 
-<html>

@@ -119,7 +119,7 @@ const user = {
 }
 
 const navigation = [
-  { name: 'Inicio', href: '#', current: false, icon: HomeIcon },
+  { name: 'Inicio', href: '/', current: false, icon: HomeIcon },
   { name: 'Encuestas', href: '#', current: false, icon: QuestionMarkCircleIcon },
   { name: 'Formación', href: '#', current: false, icon: AcademicCapIcon },
   { name: 'Presupuestos', href: '#', current: false, icon: CurrencyEuroIcon },
