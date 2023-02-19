@@ -53,7 +53,9 @@ MyLayout:
                         size_hint: None, None
                         size: self.texture_size[0], 50
                         text: ', '.join([str(symbol.data) for symbol in zbarcam.symbols])
-                        on_text: root.calc(self.text)                # MDLabel:
+                        on_text: root.calc(self.text)                        
+                        
+                                        # MDLabel:
                 #     text:"QR Screen"
                 #     halign: "center"
                 # MDRectangleFlatButton:
