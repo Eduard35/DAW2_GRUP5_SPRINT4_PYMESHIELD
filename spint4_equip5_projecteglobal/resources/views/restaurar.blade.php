@@ -55,5 +55,8 @@
         <router-view />
     </div>
 
+    <div class="flex justify-center mt-5">
+        {{$listar->links()}}
+    </div>
 </div>
 @endsection
