@@ -14,13 +14,11 @@
         <th>MAC</th>
         <th>Wifi</th>
         <th>Tipo</th>
-        <th>Descripcion</th>
+        <th>Descripción</th>
         <th>Estado</th>
         <th>Núm Serie</th>
-        <th><button data-modal-target="crear" data-modal-toggle="crear" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" type="button">
-          crear
-        </button><button data-modal-target="eliminar" data-modal-toggle="eliminar" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded">
-          Eliminar
+        <th><button data-modal-target="crear" data-modal-toggle="crear" class="fa-solid fa-plus m-2 text-blue-600 text-2xl">
+        </button><button data-modal-target="eliminar" data-modal-toggle="eliminar" class="fa-solid fa-trash-can m-2 text-red-700 text-2xl">
         </button>
       </tr>
     </thead>
@@ -38,12 +36,15 @@
         <td>{{$inventario->description}}</td>
         <td>{{$inventario->state}}</td>
         <td>{{$inventario->serial_number}}</td>
-        <td><button data-modal-target="modificar{{ $inventario->id }}" data-modal-toggle="modificar{{ $inventario->id }}" class="mt-2 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 border border-yellow-700 rounded">
-          Modificar
+        <td>
+          <div class="flex">
+          <button data-modal-target="modificar{{ $inventario->id }}" data-modal-toggle="modificar{{ $inventario->id }}" class="fa-sharp fa-solid fa-pencil m-2 text-yellow-600 text-2xl">
         </button>
-        <button data-modal-target="eliminar{{ $inventario->id }}" data-modal-toggle="eliminar{{ $inventario->id }}" class="mb-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded">
-          Eliminar
+        <button data-modal-target="eliminar{{ $inventario->id }}" data-modal-toggle="eliminar{{ $inventario->id }}" class="fa-sharp fa-solid fa-trash m-2 text-red-600 text-2xl">
         </button>
+        <a data-modal-target="imatge{{ $inventario->id }}" data-modal-toggle="imatge{{ $inventario->id }}" class="fa-sharp fa-solid fa-image m-2 text-green-600 text-2xl" href="dispositivo/{{ $inventario->id }}">
+        </a>
+      </div>
         </td>
       </tr>
       @include ("modals/eliminarDispositivo")
