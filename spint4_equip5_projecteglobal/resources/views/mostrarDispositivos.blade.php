@@ -7,6 +7,7 @@
 <div style="display:flex; justify-content:center">
 <table class="container shadow-xl table-auto w-full rounded-lg bg-white mt-5 w-99 text-center">
     <thead class="bg-orange-500 text-white">
+      <!-- camps de la taula a omplir, capçalera -->
       <tr>
         <th></th>
         <th>Marca</th>
@@ -25,6 +26,7 @@
     <tbody>
       @foreach ($dispositivos as $inventario)
       <tr class="bg-orange-100 hover:bg-orange-300">
+        <!-- camps omplerts amb dades de la base de dades -->
         <td>
             <input id="checkbox" type="checkbox">
         </td>
@@ -47,13 +49,16 @@
       </div>
         </td>
       </tr>
+      <!-- include dels modals que usarem en aquest cas com usarem editar i eliminar a toa la taula pues es posa dintre del bucle -->
       @include ("modals/eliminarDispositivo")
       @include ("modals/modificarDispositivo")
       @endforeach
+      <!-- aquest include fora ja que nomes és fa una sola vegada -->
 @include ("modals/crearDispositivo")
     </tbody>
   </table>
 </div>
+<!-- Paginació -->
 <div class="flex justify-center mb-3">
   {{$dispositivos->links()}}
   </div>

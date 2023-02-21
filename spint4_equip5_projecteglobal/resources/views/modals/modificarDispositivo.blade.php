@@ -4,8 +4,10 @@
         <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <!-- Modal header -->
+            <!-- form per a fer subimt de tots els camps editats i penjarlos -->
             <form action="{{ route('dispositiu.update', $inventario->id) }}" method="POST">
               @method('PUT')
+              <!-- metode Put no pot anar al form així que és declara aqui -->
               @csrf
             <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white" style="border-top: 20px">
@@ -20,6 +22,7 @@
                 <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                 <div class="flex flex-row justify-around text-center">
                     <div style="margin-left:0px; margin-right:0px;">
+                      <!-- dins dels inputs value per atenir el valor que tenen anteriorment -->
                         <p>Marca</p>
                         <input class="border text-center" name="brand"placeholder="{{$inventario->brand}}" value="{{$inventario->brand}}"></input>
                         <p>MAC</p>
@@ -27,7 +30,7 @@
                         <p>Tipo</p>
                         <input class="border text-center" name="type_device_id"placeholder="{{$inventario->type_device_id}}" value="{{$inventario->type_device_id}}"></input>
                         <p>Estado</p>
-                        
+                        <!-- dropdown per a triar un check -->
 <button id="modificar{{ $inventario->id }}" data-dropdown-toggle="dropdownHelperRadio" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Estado dispositivo<svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
 
 <!-- Dropdown menu -->
@@ -94,7 +97,9 @@
             </div>
             <!-- Modal footer -->
             <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+              <!-- boto submit per a enviar el formulari -->
               <button data-modal-hide="modificar{{ $inventario->id }}" type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Aceptar</button>
+              <!-- boto cancelar -->
               <button data-modal-hide="modificar{{ $inventario->id }}" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancelar</button>
             </div>
             </form>
