@@ -8,18 +8,21 @@ use App\Models\ImageDevice;
 
 class DevicesController extends Controller
 {
+    //Funcio per a llistar
     public function mostrarDispositivos(){
         $dispositivos = Device::where('hidden', '=', null)
             ->paginate(10);
         return view("mostrarDispositivos", compact('dispositivos'));
     }
 
+    //Funcio per a mostrar fotos
     public function show($id_device) {
         $device = Device::find($id_device);
         $files = ImageDevice::select('location')->where('device_id', $id_device)->get();
         return view('images', compact('files', 'device'));
     }
     
+    //Funcio per a crer dispositiu, recuperem informacio dels inputs del modal simplementt inserir
     public function crear(Request $request){
         $dispositiu = new Device;
         $dispositiu->brand = $request->input('brand');
@@ -35,6 +38,7 @@ class DevicesController extends Controller
         return back();
     }
 
+    //Funcio per a modificar dispositiu, recuperem informacio dels inputs del modal i fer update
     public function modificar(Request $request, $id){
         $dispositiu = Device::find($id);
         $dispositiu->brand = $request->input('brand');
@@ -50,6 +54,7 @@ class DevicesController extends Controller
         return back();
     }
 
+    //Funcio per a eliminar dispositiu, assigna un valor a hidden és la data en el moment que és clica el boto
     public function eliminar($id){
         $dispositiu = Device::find($id);
         $dateNow = date('Y-m-d');

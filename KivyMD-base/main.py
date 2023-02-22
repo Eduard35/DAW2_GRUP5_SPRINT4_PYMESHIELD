@@ -13,12 +13,17 @@ from kivymd.uix.scrollview import MDScrollView
 from kivy.clock import Clock
 from kivymd.uix.list import ThreeLineIconListItem
 from kivy_garden.zbarcam import ZBarCam
+from kivy.uix.button import Button
+from kivymd.uix.dialog import MDDialog
+from kivymd.uix.button import MDFlatButton
+from kivy.uix.label import Label
 
 import json
 from kivy.uix.boxlayout import BoxLayout
 
 from kivymd.uix.button import MDFloatingActionButton
 from kivy.uix.camera import Camera
+
 
 class ContentNavigationDrawer(MDBoxLayout):
     manager = ObjectProperty()
@@ -38,9 +43,16 @@ class DrawerList(ThemableBehavior, MDList):
 class MyLayout(MDScreen):
     def calc(self, instance):
         print(self.ids['qrlabel'].text)
-
-
-
+        if (self.ids['qrlabel'].text != ''):
+            MDDialog(
+                text=self.ids['qrlabel'].text,
+                buttons=[
+                    MDFlatButton(
+                        text="OK",
+                        theme_text_color="Custom"
+                    )
+                ]
+            ).open()
 
 class MyApp(MDApp):
     def build(self):
@@ -101,10 +113,9 @@ class MyApp(MDApp):
         
 
     def close_camera(self):
-        # detener la reproducción de la cámara
-        self.camera.play = False
         # eliminar el widget de la cámara de la pantalla actual
         current_screen = self.root.ids.screen_manager.get_screen("QR")
+        self.root.ids.zbarcam.ids['xcamera']._camera._device.release()
         current_screen.remove_widget(self.camera)        
         
 MyApp().run()

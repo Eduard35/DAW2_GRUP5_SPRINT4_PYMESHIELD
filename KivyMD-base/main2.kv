@@ -1,5 +1,5 @@
-#:import ZBarCam kivy_garden.zbarcam.ZBarCam
-#:import ZBarSymbol pyzbar.pyzbar.ZBarSymbol
+# #:import ZBarCam kivy_garden.zbarcam.ZBarCam
+# #:import ZBarSymbol pyzbar.pyzbar.ZBarSymbol
 
 MyLayout:
     MDTopAppBar:
@@ -64,16 +64,20 @@ MyLayout:
                         size_hint: None, None
                         size: self.texture_size[0], 50
                         text: ', '.join([str(symbol.data) for symbol in zbarcam.symbols])
-                        on_text: root.calc(self.text)                # MDLabel:
-                    text:"QR Screen"
-                    halign: "center"
-                MDRectangleFlatButton:
-                    pos_hint: {'center_y': 0.80, 'x': 0.8}
-                    on_release: app.close_camera()
-                    MDIcon:
-                        icon: 'close'
-                        halign: 'center'
-    
+                        on_text: root.calc(self.text)                
+                    # MDLabel:
+                #     text:"QR Screen"
+                #     halign: "center"
+                # MDRectangleFlatButton:
+                #     pos_hint: {'center_y': 0.80, 'x': 0.8}
+                #     on_release: app.close_camera()
+                #     MDIcon:
+                #         icon: 'close'
+                #         halign: 'center'
+
+
+
+                    
             MDScreen:
                 name: "Contact"
                 MDLabel:
