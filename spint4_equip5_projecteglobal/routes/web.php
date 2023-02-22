@@ -39,6 +39,8 @@ Route::patch('/dispositivo/{id}', [DevicesController::class, 'eliminar'])->name(
 
 //Mostrar inventari
 Route::get('/inventario', [InventoryController::class, 'inventario']);
+Route::post('/inventario', [InventoryController::class, 'buscar'])->name('inventari.buscar');
+
 
 // Imatges
 Route::get('/imagenes', [ImageDeviceController::class, 'index'])->name('image.index');

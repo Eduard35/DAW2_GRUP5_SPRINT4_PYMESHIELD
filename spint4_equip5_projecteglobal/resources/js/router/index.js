@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router"
 
 const Restaurar = () => import('../components/restaurar.vue')
 const ImageForm = () => import('../components/image-form.vue')
+const Buscador = () => import('../components/buscador.vue')
 
 
 const routes = [
@@ -20,7 +21,11 @@ const routes = [
         name: 'ImageForm',
         component: ImageForm
     },
-
+    {
+        path: '/inventario',
+        name: 'Buscador',
+        component: Buscador
+    },
 ]
 
 const router = createRouter({

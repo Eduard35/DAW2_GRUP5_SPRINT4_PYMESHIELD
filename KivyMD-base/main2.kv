@@ -35,6 +35,17 @@ MyLayout:
                 MDBoxLayout:
                     orientation:"vertical"
                     pos_hint: {'center_y': .39, 'x': .0}
+
+                    MDTextField:
+                        id: search_field
+                        hint_text: 'Buscar dipositivo'
+                        icon_right: "magnify"
+                        helper_text_mode: "on_error"
+                        helper_text: "Introduce un nombre valido"
+                        mode: "fill"
+                        fill_color: 0, 0, 0, .5
+                        on_text: app.buscar(self.text)
+
                     MDScrollView:
                         MDList:
                             id: list
@@ -54,18 +65,15 @@ MyLayout:
                         size: self.texture_size[0], 50
                         text: ', '.join([str(symbol.data) for symbol in zbarcam.symbols])
                         on_text: root.calc(self.text)                # MDLabel:
-                #     text:"QR Screen"
-                #     halign: "center"
-                # MDRectangleFlatButton:
-                #     pos_hint: {'center_y': 0.80, 'x': 0.8}
-                #     on_release: app.close_camera()
-                #     MDIcon:
-                #         icon: 'close'
-                #         halign: 'center'
-
-
-
-                    
+                    text:"QR Screen"
+                    halign: "center"
+                MDRectangleFlatButton:
+                    pos_hint: {'center_y': 0.80, 'x': 0.8}
+                    on_release: app.close_camera()
+                    MDIcon:
+                        icon: 'close'
+                        halign: 'center'
+    
             MDScreen:
                 name: "Contact"
                 MDLabel:

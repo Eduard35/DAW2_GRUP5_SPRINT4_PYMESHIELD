@@ -4,7 +4,7 @@ import Header from "./components/Navbar.vue";
 import RouterWeb from '../js/router/index'
 
 import restaurar from "./components/restaurar.vue";
-import swiper from './components/swiper.vue'
+import swiper from './components/swiper.vue';
 import buscador from "./components/buscador.vue";
 
 // prova
