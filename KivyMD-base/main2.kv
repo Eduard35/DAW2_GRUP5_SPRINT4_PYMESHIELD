@@ -1,5 +1,5 @@
-# #:import ZBarCam kivy_garden.zbarcam.ZBarCam
-# #:import ZBarSymbol pyzbar.pyzbar.ZBarSymbol
+#:import ZBarCam kivy_garden.zbarcam.ZBarCam
+#:import ZBarSymbol pyzbar.pyzbar.ZBarSymbol
 
 MyLayout:
     MDTopAppBar:
@@ -44,7 +44,7 @@ MyLayout:
                         helper_text: "Introduce un nombre valido"
                         mode: "fill"
                         fill_color: 0, 0, 0, .5
-                        on_text: app.buscar(self.text)
+                        on_text: root.buscar(self.text)
 
                     MDScrollView:
                         MDList:

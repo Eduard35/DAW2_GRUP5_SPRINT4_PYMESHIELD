@@ -17,10 +17,10 @@ class RestoreController extends Controller
 
     // Funcio per a restaurar
     public function restaurar($id){
-        $dispositiu = Device::find($id);
+        $dispositivo = Device::find($id);
         $dateNow = null;
-        $dispositiu->hidden = $dateNow;
-        $dispositiu->save();
+        $dispositivo->hidden = $dateNow;
+        $dispositivo->save();
 
         return back();
     }
